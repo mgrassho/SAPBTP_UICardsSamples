@@ -1,0 +1,71 @@
+{
+	"_version": "1.15.0",
+	"sap.app": {
+		"id": "com.sap.coo.cards.translationcard",
+		"type": "card",
+		"title": "Translation Service",
+		"subTitle": "A card that translate brief text input",
+		"applicationVersion": {
+			"version": "0.0.4"
+		}
+	},
+	"sap.card": {
+		"type": "Object",
+		"extension": "./MyExtension",
+			 "configuration": {
+				"destinations": {
+					"myDestination": {
+						"name": "TranslationService"
+					}
+				}
+			},
+			"data": {
+				"extension": {
+					"method": "getData"
+				}
+			},
+			"header": {
+				"title": "Quick Translate"
+			},
+			"content": {
+				"groups": [
+					{
+						"alignment": "Stretch",
+						"items": [
+							{
+								"id": "text",
+								"label": "Text to translate",
+								"type": "TextArea",
+								"rows": 4,
+								"placeholder": "Text to translate",
+								"visible": "{/textInputVisible}",
+								"validations": [
+									{
+										"required": true
+									}
+								]
+							},
+							{
+								"value": "{/response}",
+								"visible": "{/responseVisible}"
+							}
+						]
+					}
+				]
+			},
+			"footer": {
+				"actionsStrip": [
+					{
+						"text": "Translate",
+						"buttonType": "Accept",
+						"visible": "{/buttonVisible}",
+						"actions": [
+							{
+								"type": "Submit"
+							}
+						]
+					}
+				]
+			}
+	}
+}
