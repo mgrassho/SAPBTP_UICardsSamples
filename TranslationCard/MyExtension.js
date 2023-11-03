@@ -36,7 +36,7 @@ sap.ui.define("list/card/MyExtension", [
             oCard.showLoadingPlaceholders("Content");
 
             // Submits
-            
+
             var oSubmitPromise = oCard.request({
                 "url": "{{destinations.myDestination}}/translation",
                 "withCredentials": true,
@@ -53,9 +53,9 @@ sap.ui.define("list/card/MyExtension", [
                     data: mSubmitData.text
                 }
             });
-            
-            
-            
+
+
+
             /**
             
             // this only simulates a submit
@@ -75,7 +75,7 @@ sap.ui.define("list/card/MyExtension", [
                         buttonVisible: true,
                         response: oResponse.data
                     };
-                    
+
                     oCard.hideLoadingPlaceholders();
                     oCard.refreshData();
                 }.bind(this))

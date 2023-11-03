@@ -1,0 +1,121 @@
+{
+	"_version": "1.15.0",
+	"sap.app": {
+		"id": "com.sap.btp.coo.example.contextcard",
+		"type": "card",
+		"title": "Context Card",
+		"subTitle": "Accessing the context of the host environment",
+		"applicationVersion": {
+			"version": "1.0.2"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+        "deviceTypes": {"desktop": true, "phone": true, "tablet": true},
+		"icons": {
+			"icon": "sap-icon://list"
+		}
+	},
+	"sap.card": {
+		"type": "Object",
+		
+		"header": {
+			"title": "Display Host Context",
+			"subTitle" : "Shows key-value pairs of available context information"
+
+		},
+		"data": {
+			"json": {
+					"email": "{context>sap.workzone/currentUser/email/value}",
+					"id": "{context>sap.workzone/currentUser/id/value}",
+					"name": "{context>sap.workzone/currentUser/name/value}",
+					"firstName": "{context>sap.workzone/currentUser/firstName/value}",
+					"lastName": "{context>sap.workzone/currentUser/lastName/value}",
+					"global_uuid": "{context>sap.workzone/currentUser/global_uuid/value}",
+					"user_type": "{context>sap.workzone/currentUser/user_type/value}",
+					"time_zone": "{context>sap.workzone/currentUser/time_zone/value}",
+
+					"workspace_id" : "{context>sap.workzone/currentWorkspace/id/value}",
+					"workspace_name" : "{context>sap.workzone/currentWorkspace/name/value}",
+					
+					"company_id" : "{context>sap.workzone/currentCompany/id/value}",
+					"company_name" : "{context>sap.workzone/currentCompany/name/value}",
+					"company_webhost" : "{context>sap.workzone/currentCompany/web_host/value}"
+			}
+		},
+		"content": {
+			"groups": [
+				{
+					"title": "sap.workzone / currentUser",
+					"items": [
+						{
+							"label": "First Name",
+							"value": "{firstName}"
+						},
+						{
+							"label": "Last Name",
+							"value": "{lastName}"
+						},
+						{
+							"label": "Name",
+							"value": "{name}"
+						},
+						{
+							"label": "Email",
+							"value": "{email}"
+						},
+						{
+							"label": "ID",
+							"value": "{id}"
+						},
+						{
+							"label": "Global UUID",
+							"value": "{global_uuid}"
+						},
+						{
+							"label": "UserType",
+							"value": "{user_type}"
+						},
+						{
+							"label": "Time Zone",
+							"value": "{time_zone}"
+						}
+					]
+				},
+				{
+					"title": "sap.workzone / currentWorkspace",
+					"items": [
+						{
+							"label": "Workspace ID",
+							"value": "{workspace_id}"
+						},
+						{
+							"label": "Workspace name",
+							"value": "{workspace_name}"
+						}
+					]
+				},
+				{
+					"title": "sap.workzone / currentCompany",
+					"items": [
+						{
+							"label": "Company ID",
+							"value": "{company_id}"
+						},
+						{
+							"label": "Company Name",
+							"value": "{company_name}"
+						},
+						{
+							"label": "Company Webhost",
+							"value": "{company_webhost}"
+						}
+					]
+				}
+			]
+		}
+	},
+    "sap.platform.mobilecards": {
+        "compatible": false
+    }
+}
